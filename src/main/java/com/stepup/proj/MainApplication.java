@@ -1,245 +1,644 @@
 package com.stepup.proj;
 
-import java.math.RoundingMode;
-import java.math.BigDecimal;
+import java.util.Scanner;
 
 public class MainApplication {
     public static void main(String[] args) {
-//        //#Задание 1 #Дробная часть.
-//        System.out.println("Вводим: " + "5.35964464654654668");
-//        System.out.println("Тест: " + fraction(5.35964464654654668));
-//        System.out.println("Вводим: " + "0.3");
-//        System.out.println("Тест: " + fraction(0.3));
-//        System.out.println("Вводим: " + "108.010101010101010101");
-//        System.out.println("Тест: " + fraction(108.010101010101010101));
-//        System.out.println("Вводим: " + "12.3456789");
-//        System.out.println("Тест: " + fraction(12.3456789));
-//        System.out.println("Вводим: " + "5.3");
-//        System.out.println("Тест: " + fraction(5.3));
-//        System.out.println("Вводим: " + "7");
-//        System.out.println("Тест: " + fraction(7));
-//        System.out.println("Вводим: " + "163.0000000101001934");
-//        //в некоторых случаях формат double переводится в эксп. нотацию
-//        System.out.println("Тест: " + String.format("%.20f",fraction(163.0000000101001934)));
-//        System.out.println("Вводим: " + ("-3.141592653589793"));
-//        System.out.println("Тест: " + fraction(-3.141592653589793));
-//        //#Задание 2 #Сумма знаков.
-//        System.out.println("Вводим: " + ("25879465"));
-//        System.out.println("Тест: " + sumLastNums(25879465));
-//        System.out.println("Вводим: " + ("10"));
-//        System.out.println("Тест: " + sumLastNums(10));
-//        System.out.println("Вводим: " + ("-2567"));
-//        System.out.println("Тест: " + sumLastNums(-2567));
-//          //#Задание 3 #Букву в число
-//        System.out.println("Вводим: " + ("0"));
-//        System.out.println("Тест: " + charToNum('0'));
-//        System.out.println("Вводим: " + ("1"));
-//        System.out.println("Тест: " + charToNum('1'));
-//        System.out.println("Вводим: " + ("2"));
-//        System.out.println("Тест: " + charToNum('2'));
-//        System.out.println("Вводим: " + ("9"));
-//        System.out.println("Тест: " + charToNum('9'));
-//          //#Задание 4 #Есть ли позитив
-//        System.out.println("Вводим: " + ("-5"));
-//        System.out.println("Тест: " + isPositive(-5));
-//        System.out.println("Вводим: " + ("4"));
-//        System.out.println("Тест: " + isPositive(4));
-//        System.out.println("Вводим: " + ("100500"));
-//        System.out.println("Тест: " + isPositive(100500));
-//        System.out.println("Вводим: " + ("2,147,483,647"));
-//        System.out.println("Тест: " + isPositive(2147483647));
-//        System.out.println("Вводим: " + ("-2,147,483,648"));
-//        System.out.println("Тест: " + isPositive(-2147483648));
-//        System.out.println("Вводим: " + ("0"));
-//        System.out.println("Тест: " + isPositive(0));
-//        //#Задание 5 #Двузначное
-//        System.out.println("Вводим: " + ("0"));
-//        System.out.println("Тест: " + is2Digits(0));
-//        System.out.println("Вводим: " + ("10"));
-//        System.out.println("Тест: " + is2Digits(10));
-//        System.out.println("Вводим: " + ("99"));
-//        System.out.println("Тест: " + is2Digits(99));
-//        System.out.println("Вводим: " + ("-10"));
-//        System.out.println("Тест: " + is2Digits(-10));
-//        System.out.println("Вводим: " + ("-99"));
-//        System.out.println("Тест: " + is2Digits(-99));
-//        System.out.println("Вводим: " + ("55"));
-//        System.out.println("Тест: " + is2Digits(55));
-//        System.out.println("Вводим: " + ("512"));
-//        System.out.println("Тест: " + is2Digits(512));
-//        //#Задание 6 #Большая буква
-//        System.out.println("Вводим: " + ("X"));
-//        System.out.println("Тест: " + isUpperCase('X'));
-//        System.out.println("Вводим: " + ("ш"));
-//        System.out.println("Тест: " + isUpperCase('ш'));
-//        System.out.println("Вводим: " + ("a"));
-//        System.out.println("Тест: " + isUpperCase('a'));
-//        System.out.println("Вводим: " + (","));
-//        System.out.println("Тест: " + isUpperCase(','));
-//        System.out.println("Вводим: " + ("Б"));
-//        System.out.println("Тест: " + isUpperCase('Б'));
-//        System.out.println("Вводим: " + ("M"));
-//        System.out.println("Тест: " + isUpperCase('M'));
-//        System.out.println("Вводим: " + ("c"));
-//        System.out.println("Тест: " + isUpperCase('c'));
-//        System.out.println("Вводим: " + ("L"));
-//        System.out.println("Тест: " + isUpperCase('L'));
-//        System.out.println("Вводим: " + ("Х - русская"));
-//        System.out.println("Тест: " + isUpperCase('Х'));
-//        //#Задание 7 #Диапазон
-//        System.out.println("Вводим: " + ("a=5 b=1 num=3"));
-//        System.out.println("Тест: " + isInRange(5,1, 3));
-//        System.out.println("Вводим: " + ("a=2 b=15 num=33"));
-//        System.out.println("Тест: " + isInRange(2,15, 33));
-//        System.out.println("Вводим: " + ("a=10 b=100 num=9"));
-//        System.out.println("Тест: " + isInRange(10,100, 9));
-//        System.out.println("Вводим: " + ("a=10 b=100 num=10"));
-//        System.out.println("Тест: " + isInRange(10,100, 10));
-//        //#Задание 8 #Делитель
-//        System.out.println("Вводим: " + ("a=3 b=6"));
-//        System.out.println("Тест: " + isDivisor(3,6));
-//        System.out.println("Вводим: " + ("a=0 b=6"));
-//        System.out.println("Тест: " + isDivisor(0,6));
-//        System.out.println("Вводим: " + ("a=0 b=0"));
-//        System.out.println("Тест: " + isDivisor(0,0));
-//        System.out.println("Вводим: " + ("a=5 b=5"));
-//        System.out.println("Тест: " + isDivisor(5,5));
-//        System.out.println("Вводим: " + ("a=25 b=5"));
-//        System.out.println("Тест: " + isDivisor(25,5));
-//        System.out.println("Вводим: " + ("a=25 b=13"));
-//        System.out.println("Тест: " + isDivisor(25,13));
-//        //#Задание 9 #Равенство
-//        System.out.println("Вводим: " + ("isEqual(25,5,5));"));
-//        System.out.println("Тест: " + isEqual(25,5,5));
-//        System.out.println("Вводим: " + ("isEqual(25,25,25));"));
-//        System.out.println("Тест: " + isEqual(25,25,25));
-        //#Задание 10 #Многократный вызов
-        System.out.println("Вводим: " + ("lastNumSum(0, lastNumSum(1, lastNumSum(14, lastNumSum(123, lastNumSum(5,11)))));"));
-        System.out.println("Тест: " + lastNumSum(0, lastNumSum(1, lastNumSum(14, lastNumSum(123, lastNumSum(5,11))))));
-    }
-    public static int lastNumSum(int a, int b){
-        return (a%10)+(b%10);
+
+////задание 1
+//// Тестовый случай 1: базовый случай
+//        System.out.println("Тестовый случай 1: базовый случай");
+//        System.out.println("Вводим: listNums(0)");
+//        System.out.println("Ожидаемый результат: \"0\"");
+//        System.out.println("Фактический результат: \"" + listNums(0) + "\"");
+//
+//// Тестовый случай 2: простое число
+//        System.out.println("\nТестовый случай 2: простое число");
+//        System.out.println("Вводим: listNums(5)");
+//        System.out.println("Ожидаемый результат: \"0 1 2 3 4 5\"");
+//        System.out.println("Фактический результат: \"" + listNums(5) + "\"");
+//
+//// Тестовый случай 3: однозначное число
+//        System.out.println("\nТестовый случай 3: однозначное число");
+//        System.out.println("Вводим: listNums(1)");
+//        System.out.println("Ожидаемый результат: \"0 1\"");
+//        System.out.println("Фактический результат: \"" + listNums(1) + "\"");
+//
+//// Тестовый случай 4: двузначное число
+//        System.out.println("\nТестовый случай 4: двузначное число");
+//        System.out.println("Вводим: listNums(10)");
+//        System.out.println("Ожидаемый результат: \"0 1 2 3 4 5 6 7 8 9 10\"");
+//        System.out.println("Фактический результат: \"" + listNums(10) + "\"");
+//
+//
+//// Тестовый случай 7: минимальное значение
+//        System.out.println("\nТестовый случай 7: минимальное значение");
+//        System.out.println("Вводим: listNums(0)");
+//        System.out.println("Ожидаемый результат: \"0\"");
+//        System.out.println("Фактический результат: \"" + listNums(0) + "\"");
+//
+//// Тестовый случай 8: проверка пробелов
+//        System.out.println("\nТестовый случай 8: проверка пробелов");
+//        System.out.println("Вводим: listNums(2)");
+//        System.out.println("Ожидаемый результат: \"0 1 2\" (пробелы между числами)");
+//        System.out.println("Фактический результат: \"" + listNums(2) + "\"");
+//        //задание 2
+//        // Тест 1: базовый случай
+//        System.out.println("Тестовый случай 1: базовый случай с положительным числом");
+//        System.out.println("Вводим: reverseListNums(5)");
+//        System.out.println("Ожидаемый результат: \"5 4 3 2 1 0\"");
+//        System.out.println("Фактический результат: \"" + reverseListNums(5) + "\"");
+//
+//        // Тест 2: минимальное значение
+//        System.out.println("\nТестовый случай 2: минимальное значение (0)");
+//        System.out.println("Вводим: reverseListNums(0)");
+//        System.out.println("Ожидаемый результат: \"0\"");
+//        System.out.println("Фактический результат: \"" + reverseListNums(0) + "\"");
+//
+//        // Тест 3: небольшое положительное число
+//        System.out.println("\nТестовый случай 3: небольшое положительное число");
+//        System.out.println("Вводим: reverseListNums(3)");
+//        System.out.println("Ожидаемый результат: \"3 2 1 0\"");
+//        System.out.println("Фактический результат: \"" + reverseListNums(3) + "\"");
+//
+//        // Тест 4: число больше 10
+//        System.out.println("\nТестовый случай 4: число больше 10");
+//        System.out.println("Вводим: reverseListNums(12)");
+//        System.out.println("Ожидаемый результат: \"12 11 10 9 8 7 6 5 4 3 2 1 0\"");
+//        System.out.println("Фактический результат: \"" + reverseListNums(12) + "\"");
+//
+//        // Тест 5: проверка форматирования (пробелы)
+//        System.out.println("\nТестовый случай 5: проверка форматирования");
+//        System.out.println("Вводим: reverseListNums(2)");
+//        System.out.println("Ожидаемый результат: \"2 1 0\" (без лишних пробелов)");
+//        System.out.println("Фактический результат: \"" + reverseListNums(2) + "\"");
+//
+//        // Тест 6: проверка граничного случая
+//        System.out.println("\nТестовый случай 6: граничное значение");
+//        System.out.println("Вводим: reverseListNums(1)");
+//        System.out.println("Ожидаемый результат: \"1 0\"");
+//        System.out.println("Фактический результат: \"" + reverseListNums(1) + "\"");
+
+//        //задание 3
+//// Тестовый случай 1: базовый случай с нечетным числом
+//        System.out.println("Тестовый случай 1: базовый случай с нечетным числом");
+//        System.out.println("Вводим: chet(9)");
+//        System.out.println("Ожидаемый результат: 0 2 4 6 8");
+//        System.out.println("Фактический результат: " + chet(9));
+//
+//// Тестовый случай 2: базовый случай с четным числом
+//        System.out.println("\nТестовый случай 2: базовый случай с четным числом");
+//        System.out.println("Вводим: chet(10)");
+//        System.out.println("Ожидаемый результат: 0 2 4 6 8 10");
+//        System.out.println("Фактический результат: " + chet(10));
+//
+//// Тестовый случай 3: минимальное значение
+//        System.out.println("\nТестовый случай 3: минимальное значение");
+//        System.out.println("Вводим: chet(0)");
+//        System.out.println("Ожидаемый результат: 0");
+//        System.out.println("Фактический результат: " + chet(0));
+//
+////// Тестовый случай 4: отрицательное число
+////        System.out.println("\nТестовый случай 4: отрицательное число");
+////        System.out.println("Вводим: chet(-5)");
+////        System.out.println("Ожидаемый результат: (пустая строка)");
+////        System.out.println("Фактический результат: \"" + chet(-5) + "\"");
+//
+//// Тестовый случай 5: большое число
+//        System.out.println("\nТестовый случай 5: большое число");
+//        System.out.println("Вводим: chet(20)");
+//        System.out.println("Ожидаемый результат: 0 2 4 6 8 10 12 14 16 18 20");
+//        System.out.println("Фактический результат: " + chet(20));
+//
+//// Тестовый случай 6: единица
+//        System.out.println("\nТестовый случай 6: единица");
+//        System.out.println("Вводим: chet(1)");
+//        System.out.println("Ожидаемый результат: 0");
+//        System.out.println("Фактический результат: " + chet(1));
+//
+//// Тестовый случай 7: проверка на четность границы
+//        System.out.println("\nТестовый случай 7: проверка на четность границы");
+//        System.out.println("Вводим: chet(12)");
+//        System.out.println("Ожидаемый результат: 0 2 4 6 8 10 12");
+//        System.out.println("Фактический результат: " + chet(12));
+//
+//// Тестовый случай 8: проверка на нечетность границы
+//        System.out.println("\nТестовый случай 8: проверка на нечетность границы");
+//        System.out.println("Вводим: chet(13)");
+//        System.out.println("Ожидаемый результат: 0 2 4 6 8 10 12");
+//        System.out.println("Фактический результат: " + chet(13));
+//        //задание 4
+//        // Тест 1: базовая степень
+//        System.out.println("Тестовый случай 1: возведение в положительную степень");
+//        System.out.println("Вводим: pow(2, 5)");
+//        System.out.println("Ожидаемый результат: 32");
+//        System.out.println("Фактический результат: " + pow(2, 5));
+//        System.out.println();
+//
+//        // Тест 2: степень 0
+//        System.out.println("Тестовый случай 2: возведение в нулевую степень");
+//        System.out.println("Вводим: pow(5, 0)");
+//        System.out.println("Ожидаемый результат: 1");
+//        System.out.println("Фактический результат: " + pow(5, 0));
+//        System.out.println();
+//
+//        // Тест 3: степень 1
+//        System.out.println("Тестовый случай 3: возведение в первую степень");
+//        System.out.println("Вводим: pow(7, 1)");
+//        System.out.println("Ожидаемый результат: 7");
+//        System.out.println("Фактический результат: " + pow(7, 1));
+//        System.out.println();
+//
+//        // Тест 4: единица в степени
+//        System.out.println("Тестовый случай 4: единица в степени");
+//        System.out.println("Вводим: pow(1, 10)");
+//        System.out.println("Ожидаемый результат: 1");
+//        System.out.println("Фактический результат: " + pow(1, 10));
+//        System.out.println();
+//
+//        // Тест 5: отрицательное основание
+//        System.out.println("Тестовый случай 5: отрицательное основание");
+//        System.out.println("Вводим: pow(-2, 3)");
+//        System.out.println("Ожидаемый результат: -8");
+//        System.out.println("Фактический результат: " + pow(-2, 3));
+//        System.out.println();
+//
+//        // Тест 6: четная степень отрицательного числа
+//        System.out.println("Тестовый случай 6: четная степень отрицательного числа");
+//        System.out.println("Вводим: pow(-3, 2)");
+//        System.out.println("Ожидаемый результат: 9");
+//        System.out.println("Фактический результат: " + pow(-3, 2));
+//        System.out.println();
+//
+//        // Тест 7: большие числа
+//        System.out.println("Тестовый случай 7: большие числа");
+//        System.out.println("Вводим: pow(10, 5)");
+//        System.out.println("Ожидаемый результат: 100000");
+//        System.out.println("Фактический результат: " + pow(10, 5));
+//        System.out.println();
+//        //задание 5
+//        // Тест 1: базовое число
+//        System.out.println("Тестовый случай 1: базовое положительное число");
+//        System.out.println("Вводим: numLen(12345)");
+//        System.out.println("Ожидаемый результат: 5");
+//        System.out.println("Фактический результат: " + numLen(12345));
+//        System.out.println();
+//
+//        // Тест 2: число с нулями в конце
+//        System.out.println("Тестовый случай 2: число с нулями в конце");
+//        System.out.println("Вводим: numLen(1000)");
+//        System.out.println("Ожидаемый результат: 4");
+//        System.out.println("Фактический результат: " + numLen(1000));
+//        System.out.println();
+//
+//        // Тест 3: минимальное значение (0)
+//        System.out.println("Тестовый случай 3: минимальное значение");
+//        System.out.println("Вводим: numLen(0)");
+//        System.out.println("Ожидаемый результат: 1");
+//        System.out.println("Фактический результат: " + numLen(0));
+//        System.out.println();
+//
+//        // Тест 4: большое число
+//        System.out.println("Тестовый случай 4: большое число");
+//        System.out.println("Вводим: numLen(987654321)");
+//        System.out.println("Ожидаемый результат: 9");
+//        System.out.println("Фактический результат: " + numLen(987654321));
+//        System.out.println();
+//
+//        // Тест 5: число с одной цифрой
+//        System.out.println("Тестовый случай 5: однозначное число");
+//        System.out.println("Вводим: numLen(9)");
+//        System.out.println("Ожидаемый результат: 1");
+//        System.out.println("Фактический результат: " + numLen(9));
+//        System.out.println();
+//
+//        // Тест 6: число с несколькими нулями
+//        System.out.println("Тестовый случай 6: число с несколькими нулями");
+//        System.out.println("Вводим: numLen(100100)");
+//        System.out.println("Ожидаемый результат: 6");
+//        System.out.println("Фактический результат: " + numLen(100100));
+//        System.out.println();
+//
+//        // Тест 7: максимально возможное значение long
+//        System.out.println("Тестовый случай 7: максимально возможное значение");
+//        System.out.println("Вводим: numLen(Long.MAX_VALUE)");
+//        System.out.println("Ожидаемый результат: 19");
+//        System.out.println("Фактический результат: " + numLen(Long.MAX_VALUE));
+//        System.out.println();
+//        //задание 6
+//        // Тестирование функции equalNum
+//        System.out.println("Тестирование функции equalNum");
+//
+//        // Тест 1: все цифры одинаковые
+//        System.out.println("\nТестовый случай 1: все цифры одинаковые");
+//        System.out.println("Вводим: equalNum(1111)");
+//        System.out.println("Ожидаемый результат: true");
+//        System.out.println("Фактический результат: " + equalNum(1111));
+//
+//        // Тест 2: разные цифры
+//        System.out.println("\nТестовый случай 2: разные цифры");
+//        System.out.println("Вводим: equalNum(1234)");
+//        System.out.println("Ожидаемый результат: false");
+//        System.out.println("Фактический результат: " + equalNum(1234));
+//
+//        // Тест 3: отрицательное число с одинаковыми цифрами
+//        System.out.println("\nТестовый случай 3: отрицательное число");
+//        System.out.println("Вводим: equalNum(-5555)");
+//        System.out.println("Ожидаемый результат: true");
+//        System.out.println("Фактический результат: " + equalNum(-5555));
+//
+//        // Тест 4: число с нулями
+//        System.out.println("\nТестовый случай 4: число с нулями");
+//        System.out.println("Вводим: equalNum(0000)");
+//        System.out.println("Ожидаемый результат: true");
+//        System.out.println("Фактический результат: " + equalNum(0000));
+//
+//        // Тест 5: однозначное число
+//        System.out.println("\nТестовый случай 5: однозначное число");
+//        System.out.println("Вводим: equalNum(7)");
+//        System.out.println("Ожидаемый результат: true");
+//        System.out.println("Фактический результат: " + equalNum(7));
+//
+//        // Тест 6: число с разными цифрами в середине
+//        System.out.println("\nТестовый случай 6: разные цифры в середине");
+//        System.out.println("Вводим: equalNum(8898)");
+//        System.out.println("Ожидаемый результат: false");
+//        System.out.println("Фактический результат: " + equalNum(8898));
+//
+//        // Тест 7: большое число
+//        System.out.println("\nТестовый случай 7: большое число");
+//        System.out.println("Вводим: equalNum(66666666)");
+//        System.out.println("Ожидаемый результат: true");
+//        System.out.println("Фактический результат: " + equalNum(66666666));
+//
+//        // Тест 8: 0
+//        System.out.println("\nТестовый случай 8: 0");
+//        System.out.println("Вводим: equalNum(0)");
+//        System.out.println("Ожидаемый результат: true");
+//        System.out.println("Фактический результат: " + equalNum(0));
+//
+//        // Тест 9: 10000
+//        System.out.println("\nТестовый случай 9: 10000");
+//        System.out.println("Вводим: equalNum(Тест 8: 10000)");
+//        System.out.println("Ожидаемый результат: false");
+//        System.out.println("Фактический результат: " + equalNum(10000));
+//
+//        // Тест 9: 10000
+//        System.out.println("\nТестовый случай 8: Тест 8: 10000");
+//        System.out.println("Вводим: equalNum(Тест 8: 10000)");
+//        System.out.println("Ожидаемый результат: false");
+//        System.out.println("Фактический результат: " + equalNum(10000));
+
+//        //задание 7
+//// Тестирование функции square
+//        System.out.println("Тестирование функции square");
+//
+//// Тест 1: минимальный размер (x = 1)
+//        System.out.println("\nТестовый случай 1: минимальный размер");
+//        System.out.println("Вводим: square(1)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("*");
+//        System.out.print("Фактический результат: \n");
+//        square(1);
+//
+//// Тест 2: базовый случай (x = 2)
+//        System.out.println("\n\nТестовый случай 2: базовый случай");
+//        System.out.println("Вводим: square(2)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("**");
+//        System.out.println("**");
+//        System.out.print("Фактический результат: \n");
+//        square(2);
+//
+//// Тест 3: средний размер (x = 3)
+//        System.out.println("\n\nТестовый случай 3: средний размер");
+//        System.out.println("Вводим: square(3)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("***");
+//        System.out.println("***");
+//        System.out.println("***");
+//        System.out.print("Фактический результат: \n");
+//        square(3);
+//
+//// Тест 4: увеличенный размер (x = 4)
+//        System.out.println("\n\nТестовый случай 4: увеличенный размер");
+//        System.out.println("Вводим: square(4)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("****");
+//        System.out.println("****");
+//        System.out.println("****");
+//        System.out.println("****");
+//        System.out.print("Фактический результат: \n");
+//        square(4);
+//
+//// Тест 5: большой размер (x = 5)
+//        System.out.println("\n\nТестовый случай 5: большой размер");
+//        System.out.println("Вводим: square(5)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("*****");
+//        System.out.println("*****");
+//        System.out.println("*****");
+//        System.out.println("*****");
+//        System.out.println("*****");
+//        System.out.print("Фактический результат: \n");
+//        square(5);
+//
+//// Тест 6: проверка граничного значения (x = 0)
+//        System.out.println("\n\nТестовый случай 6: проверка граничного значения");
+//        System.out.println("Вводим: square(0)");
+//        System.out.println("Ожидаемый результат: пустая строка");
+//        System.out.print("Фактический результат: \n");
+//        square(0);
+//
+//// Тест 7: проверка отрицательного значения (x = -1)
+//        System.out.println("\n\nТестовый случай 7: проверка отрицательного значения");
+//        System.out.println("Вводим: square(-1)");
+//        System.out.println("Ожидаемый результат: пустая строка");
+//        System.out.print("Фактический результат: \n");
+//        square(-1);
+//        // Тестирование функции leftTriangle
+//        System.out.println("Тестирование функции leftTriangle");
+//
+//// Тест 1: минимальный случай (x = 1)
+//        System.out.println("\nТестовый случай 1: минимальный случай");
+//        System.out.println("Вводим: leftTriangle(1)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("*");
+//        System.out.print("Фактический результат: \n");
+//        leftTriangle(1);
+//
+//// Тест 2: базовый случай (x = 2)
+//        System.out.println("\nТестовый случай 2: базовый случай");
+//        System.out.println("Вводим: leftTriangle(2)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("*");
+//        System.out.println("**");
+//        System.out.print("Фактический результат: \n");
+//        leftTriangle(2);
+//
+//// Тест 3: средний случай (x = 4)
+//        System.out.println("\nТестовый случай 3: средний случай");
+//        System.out.println("Вводим: leftTriangle(4)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("*");
+//        System.out.println("**");
+//        System.out.println("***");
+//        System.out.println("****");
+//        System.out.print("Фактический результат: \n");
+//        leftTriangle(4);
+//
+//// Тест 4: большой треугольник (x = 6)
+//        System.out.println("\nТестовый случай 4: большой треугольник");
+//        System.out.println("Вводим: leftTriangle(6)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("*");
+//        System.out.println("**");
+//        System.out.println("***");
+//        System.out.println("****");
+//        System.out.println("*****");
+//        System.out.println("******");
+//        System.out.print("Фактический результат: \n");
+//        leftTriangle(6);
+//
+//// Тест 5: граничное значение (x = 0)
+//        System.out.println("\nТестовый случай 5: граничное значение");
+//        System.out.println("Вводим: leftTriangle(0)");
+//        System.out.println("Ожидаемый результат: пустой вывод");
+//        System.out.print("Фактический результат: \n");
+//        leftTriangle(0);
+//
+//// Тест 6: отрицательное значение (x = -3)
+//        System.out.println("\nТестовый случай 6: отрицательное значение");
+//        System.out.println("Вводим: leftTriangle(-3)");
+//        System.out.println("Ожидаемый результат: пустой вывод");
+//        System.out.print("Фактический результат: \n");
+//        leftTriangle(-3);
+//
+//// Тест 7: проверка на максимальное значение
+//        System.out.println("\nТестовый случай 7: максимальное значение");
+//        System.out.println("Вводим: leftTriangle(10)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("*");
+//        System.out.println("**");
+//        System.out.println("***");
+//        System.out.println("****");
+//        System.out.println("*****");
+//        System.out.println("******");
+//        System.out.println("*******");
+//        System.out.println("********");
+//        System.out.println("*********");
+//        System.out.println("**********");
+//        System.out.print("Фактический результат: \n");
+//        leftTriangle(10);
+//        //задание 9
+//// Тестирование функции rightTriangle
+//        System.out.println("Тестирование функции rightTriangle");
+//
+//        // Тест 1: базовый случай x = 3
+//        System.out.println("\nТестовый случай 1: базовый случай x = 3");
+//        System.out.println("Вводим: rightTriangle(3)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("  *");
+//        System.out.println(" **");
+//        System.out.println("***");
+//        System.out.print("Фактический результат: \n");
+//        rightTriangle(3);
+//
+//        // Тест 2: базовый случай x = 4
+//        System.out.println("\nТестовый случай 2: базовый случай x = 4");
+//        System.out.println("Вводим: rightTriangle(4)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("   *");
+//        System.out.println("  **");
+//        System.out.println(" ***");
+//        System.out.println("****");
+//        System.out.print("Фактический результат: \n");
+//        rightTriangle(4);
+//
+//        // Тест 3: минимальный допустимый случай x = 1
+//        System.out.println("\nТестовый случай 3: минимальный случай x = 1");
+//        System.out.println("Вводим: rightTriangle(1)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("*");
+//        System.out.print("Фактический результат: \n");
+//        rightTriangle(1);
+//
+//        // Тест 4: случай x = 5
+//        System.out.println("\nТестовый случай 4: случай x = 5");
+//        System.out.println("Вводим: rightTriangle(5)");
+//        System.out.println("Ожидаемый результат:");
+//        System.out.println("    *");
+//        System.out.println("   **");
+//        System.out.println("  ***");
+//        System.out.println(" ****");
+//        System.out.println("*****");
+//        System.out.print("Фактический результат: \n");
+//        rightTriangle(5);
+//
+//        // Тест 5: проверка на отрицательное число
+//        System.out.println("\nТестовый случай 5: проверка на отрицательное число x = -2");
+//        System.out.println("Вводим: rightTriangle(-2)");
+//        System.out.println("Ожидаемый результат: сообщение об ошибке");
+//        System.out.print("Фактический результат: \n");
+//        rightTriangle(-2);
+//
+//        // Тест 6: проверка на ноль
+//        System.out.println("\nТестовый случай 6: проверка на ноль x = 0");
+//        System.out.println("Вводим: rightTriangle(0)");
+//        System.out.println("Ожидаемый результат: сообщение об ошибке");
+//        System.out.print("Фактический результат: \n");
+//        rightTriangle(0);
+        //задание 10
+        guessGame();
     }
 
-    public static boolean isEqual(int a, int b, int c) {
-        // чисто математически это корректно будет работать
-        return a == b && b == c;
-    }
+    public static void guessGame() {
+        int randomNum = 3;  // Загаданное число
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        int attempts = 0;   // Счетчик попыток
 
-    public static boolean isDivisor(int a, int b) {
-        // код ниже универсален - рассмотрим оба случая одновеременно одной строкой
-        // если делимое 0 - это false
-        // если делить = 0 - это true, потому что остаток 0
-        // главное что бы оба значения были не 0, в остальных случаеях всега c 1 нулём - true
-        // конструкция такая (условия И условие) ИЛИ (услови И условие)
-        return (a != 0 && b % a == 0) || (b != 0 && a % b == 0);
-        //как альтернатива, можно было для начала определить какое больше
-        //и решить что делитель, а что делимое
-        // и реалезовать конкретно делителя правило деления на 0 вместо униврсального условия
-        //потом менять местами и повторить операцию.
-        //Выбрать один из результатов true
-    }
+        // Бесконечный цикл, как просили
+        while (true) {
+            System.out.println("What number am I thinking (0 to 9)? :");
+            int x = sc.nextInt();
+            // считаем попыточки
+            attempts++;
 
-    public static boolean isInRange(int a, int b, int num) {
-        int lower,upper;
-        // Определяем нижнюю границу диапазона
-        lower = (b > a) ? a : b; //аналог  Math.min(a, b)
-        // Определяем верхнюю границу диапазона
-        upper = (b > a) ? b : a; //аналог  Math.max
-        //можно и через if else, но в общем целом разницы нет
-        // Проверяем, находится ли число в диапазоне [lower, upper]
-        return num >= lower && num <= upper;
-    }
-    public static boolean isUpperCase(char x) {
-        // Получаем ASCII-код символа
-        int code = (int) x;
-
-        // Проверяем, находится ли код в диапазоне {A[65], Z[90]}
-        return code >= 'A' && code <= 'Z';
-    }
-
-    public static boolean is2Digits(int x) {
-        // не совсем понятен кусок задания >>чтобы он принимал *положительное* число x<<
-        // как я понял любое число он должен принимать, но диапазон для положительного числа
-        // Проверяем, что число положительное и находится в диапазоне двузначных чисел
-        // && - логическое "И", т.е. 2 условия должно совпадать >= 10 и <=99 -
-        // или как вариант > 9 и < 100
-        return x >= 10 && x <= 99;
-    }
-
-    public static boolean isPositive(int x) {
-        //по идее 0 не считается не положительным не отрицательным
-        //по этому будем считать false т.к. не положительное.
-        return x > 0;
-    }
-
-    public static int charToNum(char x) {
-        // Используем вычитание ASCII-кода символа '0' из переданного символа
-        //код символа ‘0’ — это число 48 , остальные +1 к 48, т.е. 1 = 49, и тд.
-        //т.е. результат вычитания чисел ASCII-кода - есть нужная нам цифра
-        return x - '0';
-    }
-    public static int sumLastNums(int x) {
-        // Получаем последнюю цифру
-        // берём остак от 10 , это 1 цифра любого целого числа
-        int lastDigit = x % 10;
-
-        // Получаем предпоследнюю цифру
-        // Делим на 10 что бы на порядок уменьшить - т.е. предидущюю последнюю цифру
-        // ну и снова берём осток от 10
-        int secondLastDigit = (x / 10) % 10;
-
-        // Возвращаем сумму последних двух цифр
-        return lastDigit + secondLastDigit;
-    }
-
-    public static double fraction(double x)
-    {
-        //возможно лишнее в рамках данного задания, но оно точно выводит число double до определённого порядка
-        BigDecimal number = new BigDecimal(Double.toString(x));
-        BigDecimal bdResult = number.remainder(BigDecimal.ONE);
-        double doubleRestul;
-        //проверка наличия точки
-        String str = String.valueOf(x);
-        int dotIndex = str.indexOf('.');
-        if (dotIndex == -1) {
-            return 0.0;
+            if (x != randomNum) {
+                System.out.println("No, try again");
+            } else {
+                System.out.println("Yes, it's " + randomNum);
+                System.out.println("You guessed it in " + attempts + " attempts!");
+                // "вылетаем" из цикла при правильном ответе
+                break;
+            }
         }
-        // Считаем количество значащих цифр после точки, что бы определить точность
-        int scale = str.length() - dotIndex - 1;
-        // Double имеет ограничения размерности, по этому вывод не всегда точен
-        // По этому смотрел в строке по дебагу, что всё правильно считается
-        String strResult = bdResult.setScale(scale, RoundingMode.HALF_UP).toPlainString();
-        // Возвращаем результат с нужной точностью
-        doubleRestul = bdResult.setScale(scale, RoundingMode.HALF_UP).doubleValue();
-        return bdResult.setScale(scale, RoundingMode.HALF_UP).doubleValue();
     }
-    //вариант с вычитанием из целой части
-    public static double fraction5(double x){
-        double doubleNumber = Math.abs(x) ;
-        int celoe = (int) (doubleNumber/1);
-        double result = (double) (doubleNumber - (double) celoe);
+    public static void guessGame2() {
+        int randomNum = 3;
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        System.out.println("What number am I thinking (0 to 9)? :");
+        int x = sc.nextInt();
+        if (x != randomNum) {
+            System.out.println("No, try again");
+        } else {
+            System.out.println("Yes, it`s " + randomNum);
+        }
+    }
+
+    public static void rightTriangle(int x) {
+        // Внешний цикл по строкам
+        for (int i = 1; i <= x; i++) {
+            // цикл с ифом, не читабально, но мне понятно
+            // не знаю как это нормально объяснить
+            // ставим пробел пока не отсчитаем до символа = номеру строк в обратном порядке
+            // как хотите так понимайте :D
+            // главное работает!
+            for (int j = x; j > 0; j--) {
+                if(j>i){System.out.print(" ");}
+                else {System.out.print("*");}
+            }
+//          //альтернативный вариант
+//             for (int j = 1; j <= x; j++) {
+//                  if(x-j>=i){System.out.print(" ");}
+//                  else {System.out.print("*");}
+//              }
+            // Переходим на новую строку
+            System.out.println();
+        }
+    }
+
+
+
+    public static void leftTriangle(int x) {
+        // Внешний цикл перебирает строки
+        for (int i = 1; i <= x; i++) {
+            // здесь условия цикла построены таким образом
+            // что в строке столько символов, скольким равна i
+            // i = 2 - значит будет 2 символа. 3 - 3  . И так до тех пока не вылетит верхний цикл по ограничению
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            // Переход на новую строку после каждой итерации внешнего цикла
+            System.out.println();
+        }
+    }
+
+    public static void square(int x) {
+        // Внешний цикл отвечает за количество строк с символами
+        for (int i = 0; i < x; i++) {
+            // Внутренний цикл отвечает за количество символов в строке
+            for (int j = 0; j < x; j++) {
+                // Выводим символ без перехода на новую строку
+                System.out.print("*");
+            }
+            // После каждой строки переходим на новую
+            System.out.println();
+        }
+    }
+
+    public static boolean equalNum(int x) {
+
+        // Работаем с абсолютным значением числа, чтобы избежать проблем с отрицательными числами
+        x = Math.abs(x);
+        // Получаем первую цифру числа
+        int firstDigit = x % 10;
+
+        //цикл по всем цифрам, включая 0 (для него сделал do)
+        do {
+            if (x%10 != firstDigit) return false;
+            x /= 10;
+        }
+        while (x > 0);
+
+        //если цикл не отвалился раньше, значит все цифры одинаковые
+        return true;
+    }
+
+    public static int numLen(long x) {
+
+        int count = 0;
+        //поставил do вперёд что бы 0 корректно отрабатывал
+        do {x /= 10; count++; }
+        while (x > 0);
+        return count;
+    }
+
+    public static int pow(int x, int y) {
+        int result = 1;
+        // не самый оптимальный способ, но в части задания сгодится
+        // Умножаем результат сам на себя, столько раз - сколько равно y
+        for (int i = 0; i < y; i++) {result *= x; }
         return result;
     }
-    public static double fraction3(double x){
-        return (double) (x%1);
+    public static String chet(int x) {
+        StringBuilder result = new StringBuilder();
+        // Используем цикл с шагом 2, чтобы получать только чётные числа
+        // как на видео по учебному материалу
+        for (int i = 0; i <= x; i += 2) {result.append(i + " ");}
+        return result.deleteCharAt(result.length() - 1).toString();
     }
-    public static double fraction2(double x){
-        // Преобразуем число в строку
-        String str = String.valueOf(x);
 
-        // Находим позицию точки
-        int dotIndex = str.indexOf('.');
+    public static String reverseListNums(int x) {
+        // Создаем StringBuilder для эффективной работы со строками
+        StringBuilder result = new StringBuilder();
 
-        // Если точки нет, возвращаем 0
-        if (dotIndex == -1) {
-            return 0.0;
-        }
+        // Проходим от x до 0 включительно
+        for (int i = x; i >= 0; i--) {result.append(i + " ");}
 
-        long celoe = (long) Math.pow(10, str.substring(dotIndex + 1).length()-1);
-        long drobnoe = Long.valueOf(str.substring(dotIndex + 1));
-        // Возвращаем часть после точки
-        BigDecimal result = new BigDecimal("0." + drobnoe);
-        return result.doubleValue();
+        // Возвращаем результат в виде строки
+        return result.deleteCharAt(result.length() - 1).toString();
     }
+
+    public static String listNums(int x) {
+        // Создаем StringBuilder для конкатенации строк
+        StringBuilder result = new StringBuilder();
+
+        // Проходим по всем числам от 0 до x включительно
+        for (int i = 0; i <= x; i++) {result.append(i + " ");}
+
+        // Возвращаем итоговую строку, обрезаем пробел в конце
+        return result.deleteCharAt(result.length() - 1).toString();
+    }
+
 }
